@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "sourceType": "indi.wuyue.dynamicds.ds.DatasourceProp",
+      "name": "spring.datasource.master.name",
+      "type": "java.lang.String"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'indi.wuyue'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly ('org.projectlombok:lombok:1.18.8')
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compile 'mysql:mysql-connector-java:5.1.47'
+    compile 'com.alibaba:druid-spring-boot-starter:1.1.17'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,38 @@
+server:
+  port: 12345
+
+logging:
+  level:
+    root: info
+
+spring:
+  application:
+    name: dynamic-ds
+  datasource:
+    master:
+      name: master
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: qwe123@@
+    slaves:
+      - name: slave1
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/slave1
+        username: root
+        password: qwe123@@
+      - name: slave2
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/slave1
+        username: root
+        password: qwe123@@
+
+mybatis:
+#  mapper-locations: classpath*:mapper/*.xml
+  mapper-locations: classpath*:indi/wuyue/dynamicds/test/dao/mapper/*.xml
+  type-aliases-package: indi.wuyue.dynamicds.test.bean
+#  type-handlers-package: com.example.typehandler
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
