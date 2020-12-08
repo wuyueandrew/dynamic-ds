@@ -1,0 +1,11 @@
+# dynamic-ds
+
+自定义根据注解选择数据源
+注解DS
+AOP：
+切面DSAnnotationPointcutAdvisor
+Advice DynamicDSInterceptor
+通过包装多个Druid DS来实现多数据源
+拦截的时候会给加了注解的方法往DSThreadLocal（里面的数据结构是个栈）加数据源的名称
+然后通过继承AbstractRoutingDataSource的DynamicRouterDatasource选择数据源，默认是master
+
